@@ -2,9 +2,8 @@ import { Controller, Get, Post, UploadedFile, UseInterceptors } from '@nestjs/co
 import { FileInterceptor } from '@nestjs/platform-express/multer';
 import { ProductSold } from './productsold.model';
 import { ProductSoldService } from './productsold.service';
-import { ProductSoldDTO } from './productsold.dto';
 
-@Controller('product-sold')
+@Controller('api/v1/product-sold')
 export class ProductSoldController {
   constructor(private readonly productSoldService: ProductSoldService) {}
 
@@ -22,7 +21,7 @@ export class ProductSoldController {
     await this.productSoldService.ProcessFileTXT(data);
   }
 
-  private processContentFile(content: string): ProductSoldDTO[] {
+  private processContentFile(content: string): ProductSold[] {
     const lines = content.split('\n');
     return lines.map((linha) => {
         const [type, date, description, value, seller] = [
