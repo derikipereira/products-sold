@@ -1,27 +1,33 @@
 import { PrismaService } from 'src/prisma.service';
 import { ProductSold } from './productsold.model';
-import { ProductSoldDTO } from './productsold.dto';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class ProductSoldService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prismaService: PrismaService) {}
 
   async getAllProductSold(): Promise<ProductSold[]> {
-    return this.prisma.productSold.findMany();
+    return this.prismaService.productSold.findMany();
   }
 
-  async ProcessFileTXT(data: ProductSoldDTO[]): Promise<void> {
+  async ProcessFileTXT(data: ProductSold[]): Promise<void> {
     await Promise.all(
       data.map(async (element) => {
-        await this.prisma.productSold.create({
-          data: {
-            type: element.type,
-            date: new Date(element.date),
-            description: element.description,
-            value: element.value,
-            seller: element.seller,
-          },
-        });
+        if (element && element.type && element.date && element.description && element.value && element.seller) {
+          await this.prismaService.productSold.create({
+            data: {
+              type: element.type,
+              date: new Date(element.date),
+              description: element.description,
+              value: element.value,
+              seller: element.seller,
+            },
+          });
+        } else {
+          console.error('Objeto `element` ou suas propriedades são undefined:', element);
+        }
       })
     );
   }
+  
 }
