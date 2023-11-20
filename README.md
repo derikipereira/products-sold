@@ -10,7 +10,7 @@ application. The format is described in the "Input file format" section.
 ## Tabela de Conteúdos
 
 - [Project Overview](#project-overview)
-- [Tecnologias Utilizadas](#technologies-used)
+- [Technologies Used](#technologies-used)
 - [Requirements](#requirements)
 - [Project Execution](#project-execution)
 - [License](#license)
