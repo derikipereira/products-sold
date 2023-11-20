@@ -7,7 +7,7 @@ relational databases.
 You must use the file [sales.txt](sales.txt) to test the
 application. The format is described in the "Input file format" section.
 
-## Tabela de Conteúdos
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Technologies Used](#technologies-used)
