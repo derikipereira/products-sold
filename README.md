@@ -1,4 +1,4 @@
-# Project Products Sold (TO DO)
+# Project Products Sold
 
 Your task is to build a web interface that allows you to upload a file
 of transactions for products sold, normalize the data and store it in a
