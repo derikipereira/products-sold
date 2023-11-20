@@ -1,4 +1,4 @@
-# Project Products Sold
+# Project Products Sold(Hubbi Challenge)
 
 Your task is to build a web interface that allows you to upload a file
 of transactions for products sold, normalize the data and store it in a
@@ -7,6 +7,7 @@ relational databases.
 You must use the file [sales.txt](sales.txt) to test the
 application. The format is described in the "Input file format" section.
 
+This is a challenge by [Hubbi](https://app.hubbi.app/)
 ## Table of Contents
 
 - [Project Overview](#project-overview)
